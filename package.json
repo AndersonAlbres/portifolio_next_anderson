@@ -1,7 +1,14 @@
 {
   "name": "portfolio-anderson",
   "version": "0.1.0",
+  "description": "Site de portfólio pessoal de Anderson Albres, construído com Next.js, TypeScript e Tailwind CSS.",
   "private": true,
+  "license": "UNLICENSED",
+  "author": "Anderson Albres <andersonalbres99@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AndersonAlbres/portifolio_next_anderson"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
