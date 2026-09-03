@@ -1,9 +1,16 @@
 # Portfólio — Anderson Albres
 
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?logo=tailwindcss)
+![License](https://img.shields.io/badge/license-UNLICENSED-lightgrey)
+
 Site de portfólio pessoal, construído com Next.js (App Router) + TypeScript +
 Tailwind CSS. Tema dark/tech, com seções de apresentação, stack, soluções,
 projetos e contato, animações de entrada ao rolar, favicon e imagem de
 compartilhamento (OpenGraph) geradas dinamicamente.
+
+Repositório: [github.com/AndersonAlbres/portifolio_next_anderson](https://github.com/AndersonAlbres/portifolio_next_anderson)
 
 ## Rodando localmente
 
@@ -13,6 +20,15 @@ npm run dev
 ```
 
 Abra [http://localhost:3000](http://localhost:3000).
+
+## Scripts disponíveis
+
+| Comando         | Descrição                                   |
+| --------------- | -------------------------------------------- |
+| `npm run dev`   | Sobe o servidor de desenvolvimento           |
+| `npm run build` | Gera o build de produção                     |
+| `npm start`     | Serve o build de produção (rodar após build) |
+| `npm run lint`  | Roda o ESLint no projeto                     |
 
 ## Editando o conteúdo
 
@@ -59,3 +75,8 @@ Depois de escolher o domínio final, defina a variável de ambiente
 `NEXT_PUBLIC_SITE_URL` (ex.: `https://andersonalbres.dev`) no provedor de
 deploy — ela é usada para resolver a URL absoluta da imagem de
 compartilhamento (OpenGraph).
+
+## Licença
+
+Todos os direitos reservados — veja [LICENSE](LICENSE). O código é público
+apenas para fins de portfólio/demonstração.
