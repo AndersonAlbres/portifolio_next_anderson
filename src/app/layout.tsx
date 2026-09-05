@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { profile, socials } from "@/data/site";
+import { siteUrl } from "@/lib/site-config";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,10 +13,6 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
-
-// Depois de escolher o domínio final, defina NEXT_PUBLIC_SITE_URL no ambiente
-// de deploy (ex.: Vercel) para as imagens de OpenGraph resolverem com URL absoluta.
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 const title = "Anderson Albres — Desenvolvedor Python & Full Stack";
 const description =
@@ -33,6 +31,9 @@ export const metadata: Metadata = {
     "n8n",
     "React",
   ],
+  alternates: {
+    canonical: siteUrl,
+  },
   openGraph: {
     title,
     description,
@@ -48,13 +49,30 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.role,
+  description,
+  url: siteUrl,
+  email: `mailto:${socials.email}`,
+  sameAs: [socials.github, socials.linkedin],
+};
+
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+      </body>
     </html>
   );
 }
