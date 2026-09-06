@@ -18,7 +18,7 @@ export default function Solutions() {
         <div className="grid gap-3 sm:grid-cols-2">
           {solutions.map((item, index) => (
             <Reveal key={item} delayMs={index * 40}>
-              <div className="flex items-start gap-3 rounded-lg border border-border bg-surface px-4 py-3.5">
+              <div className="flex items-start gap-3 rounded-xl border border-border bg-surface px-4 py-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
                   <CheckIcon className="h-3.5 w-3.5" />
                 </span>

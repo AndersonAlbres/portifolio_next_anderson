@@ -67,6 +67,7 @@ export const solutions: string[] = [
 
 export type Project = {
   title: string;
+  kind: "Projeto pessoal" | "Projeto para cliente";
   description: string;
   tags: string[];
   image: string; // screenshot em /public/projects
@@ -79,6 +80,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: "Termo 1x1",
+    kind: "Projeto pessoal",
     description:
       "Jogo de palavras multiplayer em tempo real (estilo Termo/Wordle BR), com modos Duelo, Grupo, Solo e Impostor. Comunicação via WebSocket e instalável como PWA (o multiplayer exige conexão com o servidor). Projeto feito para testar o Claude Code na prática.",
     tags: ["Python", "FastAPI", "WebSocket", "PWA"],
@@ -89,6 +91,7 @@ export const projects: Project[] = [
   },
   {
     title: "Samara Leite Mídias",
+    kind: "Projeto para cliente",
     description:
       "Site institucional para um estúdio de criação de conteúdo digital (social media, fotografia e gestão de redes sociais). Projeto de ponta a ponta: design, desenvolvimento, compra e configuração de domínio próprio até publicação.",
     tags: ["Site institucional", "Domínio & DNS", "Deploy"],

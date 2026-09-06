@@ -17,7 +17,7 @@ export default function Skills() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((category, index) => (
             <Reveal key={category.title} delayMs={index * 70}>
-              <div className="h-full rounded-xl border border-border bg-surface p-6 transition-colors hover:border-accent/40">
+              <div className="h-full rounded-xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
                 <h3 className="mb-4 font-mono text-sm font-semibold text-accent">
                   {category.title}
                 </h3>

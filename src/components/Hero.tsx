@@ -8,8 +8,6 @@ export default function Hero() {
       id="top"
       className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pt-24 pb-16"
     >
-      <div className="bg-grid pointer-events-none absolute inset-0" />
-
       <div className="relative mx-auto w-full max-w-6xl">
         <p className="font-mono text-sm text-accent">Olá, meu nome é</p>
 
