@@ -20,7 +20,7 @@ export default function OgImage() {
           fontFamily: "monospace",
         }}
       >
-        <div style={{ display: "flex", color: "#38bdf8", fontSize: 28, marginBottom: 28 }}>
+        <div style={{ display: "flex", color: "#ef4444", fontSize: 28, marginBottom: 28 }}>
           {"<Anderson />"}
         </div>
 
@@ -39,7 +39,7 @@ export default function OgImage() {
         <div
           style={{
             display: "flex",
-            color: "#38bdf8",
+            color: "#ef4444",
             fontSize: 34,
             marginTop: 22,
           }}

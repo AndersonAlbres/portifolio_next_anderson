@@ -20,8 +20,21 @@ export default function TypedText({
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [text, setText] = useState("");
   const [deleting, setDeleting] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  );
 
   useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    query.addEventListener("change", onChange);
+    return () => query.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (reducedMotion) return;
     const current = phrases[phraseIndex % phrases.length];
 
     if (!deleting && text === current) {
@@ -47,7 +60,11 @@ export default function TypedText({
     );
 
     return () => clearTimeout(step);
-  }, [text, deleting, phraseIndex, phrases, typingSpeedMs, deletingSpeedMs, pauseMs]);
+  }, [text, deleting, phraseIndex, phrases, typingSpeedMs, deletingSpeedMs, pauseMs, reducedMotion]);
+
+  if (reducedMotion) {
+    return <span className={className}>{phrases[0]}</span>;
+  }
 
   return (
     <span className={className}>

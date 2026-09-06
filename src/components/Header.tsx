@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { profile } from "@/data/site";
 import { CloseIcon, MenuIcon } from "./icons";
 
@@ -8,12 +8,21 @@ const NAV_ITEMS = [
   { href: "#sobre", label: "Sobre" },
   { href: "#stack", label: "Stack" },
   { href: "#solucoes", label: "Soluções" },
-  { href: "#projetos", label: "Projetos" },
+  { href: "#projetos", label: "Experiência" },
   { href: "#contato", label: "Contato" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">

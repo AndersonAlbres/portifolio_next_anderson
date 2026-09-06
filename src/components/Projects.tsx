@@ -16,16 +16,16 @@ export default function Projects() {
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <SectionHeading
-            eyebrow="projetos"
-            title="Projetos em destaque"
-            description="Uma amostra do tipo de trabalho que desenvolvo. Em constante evolução — novos projetos entram aqui conforme saem do forno."
+            eyebrow="experiência"
+            title="Experiência & Projetos"
+            description="Aprendo construindo — cada projeto abaixo é trabalho real, entregue de ponta a ponta, seja por iniciativa própria ou para um cliente."
           />
         </Reveal>
 
         <div className="grid gap-5 sm:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.title} delayMs={index * 100}>
-              <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:border-accent/40">
+              <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/5">
                 <div className="relative aspect-video w-full overflow-hidden border-b border-border bg-surface-2">
                   <Image
                     src={project.image}
@@ -38,9 +38,12 @@ export default function Projects() {
 
                 <div className="flex flex-1 flex-col p-6">
                   <div className="mb-3 flex items-start justify-between gap-3">
-                    <h3 className="text-lg font-semibold text-foreground">
-                      {project.title}
-                    </h3>
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {project.title}
+                      </h3>
+                      <p className="mt-0.5 font-mono text-xs text-accent">{project.kind}</p>
+                    </div>
                     <span
                       className={`shrink-0 rounded-full border px-2.5 py-1 text-xs font-medium ${STATUS_STYLES[project.status]}`}
                     >
