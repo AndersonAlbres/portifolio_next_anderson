@@ -13,6 +13,7 @@ compartilhamento (OpenGraph) geradas dinamicamente.
 
 Repositório: [github.com/AndersonAlbres/portifolio_next_anderson](https://github.com/AndersonAlbres/portifolio_next_anderson)
 
+
 ## Rodando localmente
 
 ```bash
